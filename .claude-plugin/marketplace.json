@@ -1,0 +1,12 @@
+{
+  "name": "explainer-video-workflow",
+  "owner": { "name": "Hicham Hbaz" },
+  "plugins": [
+    {
+      "name": "explainer-video-workflow",
+      "source": "./",
+      "description": "Interview-driven workflow for short vertical explainer videos mixing b-roll and motion graphics.",
+      "version": "1.0.0"
+    }
+  ]
+}

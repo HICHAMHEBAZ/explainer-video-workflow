@@ -1,0 +1,7 @@
+{
+  "name": "explainer-video-workflow",
+  "description": "Interview-driven workflow for short vertical explainer videos mixing b-roll and motion graphics: asks about your references and script type, then generates a tailored step-by-step workflow.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["video", "explainer", "reels", "shorts", "script", "motion-graphics", "workflow"]
+}
