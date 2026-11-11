@@ -26,7 +26,10 @@ B01 | bite brolls/video/<file> <start>-<end> | <name> · <role> | <language>
 3. **Final rehook:** …
 4. **Footage / graphics share:** … % / … %
 
-## Review
+## Review (separate reviewer, applied silently; do not print a score)
+- [ ] Line 1 sells line 2 all the way down  - [ ] First surprising fact by 5-10 s
+- [ ] Specific numbers, names, dates instead of summaries  - [ ] 10-year-old test on every line
+- [ ] No formula-mode sign (survives a subject swap, nameable format, adapted old hook)
 - [ ] Facts match the research file  - [ ] User's language rules hold  - [ ] Stance holds
 - [ ] Line 1 sells line 2 (no fluff)  - [ ] Last line leaves something open
 - [ ] No invented numbers  - [ ] Every `visual:` footage entry exists in `scout.md`

@@ -24,7 +24,7 @@ Read the style file (references, writing style, format). Fix canvas, fps and saf
 
 ## 1. Script
 - Input: the content source. Research into `research/<slug>.md` with a URL for every on-screen fact (skip for pasted text).
-- Write in the user's style (`writing-style.md`) with the loop mechanics (`script-loop.md`). Length from the format (about 2.4 spoken words per second).
+- Load the content principles and the style file (`writing-style.md`). Name the one viewer and the one gap for yourself, draft with no structure in mind, then read it as that viewer line by line and cut. Loop mechanics: `script-loop.md` (priors, not a template). Length from the format (about 2.4 spoken words per second).
 - Format: numbered chunks `S01 | …` of one or two sentences, a `visual:` line (what it shows, family) and a `src:`. Save `runs/<id>/script.md`.
 - A separate reviewer pass fixes facts, language rules, stance and flow.
 

@@ -75,6 +75,7 @@ Say any of:
 
 ## Principles baked in
 
+- **Writing built on content principles**: one viewer, the gap, line sells line, loops, specificity, simple sentences, cut the fluff; your style and stance only add constraints.
 - **Voice first.** The recorded voice is the truth; captions and cuts follow it.
 - Footage shows the named thing, graphics explain concepts. Nothing honest to film becomes a graphic.
 - Never invent numbers, quotes, receipts or logos.

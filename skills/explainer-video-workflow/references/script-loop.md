@@ -1,6 +1,6 @@
 # Script writing: the retention loop
 
-Applied in step 1 of every run. It is the structure of the script, not an optional style. Language and voice come from `style-preferences.md`.
+Mechanics of principle 4 (curiosity loops) in `writing-style.md`, which decides how the script is built and takes precedence. Use this file as priors for informational scripts, never as a template to fill: if it makes the script survive a change of subject, you are in formula mode. Language and voice come from `style-preferences.md`.
 
 ## The idea
 Dopamine is the prediction chemical: it fires while the viewer waits to learn what happens. A vending machine (same input, same output) is flat; a slot machine (unknown outcome) holds attention. A script keeps people watching by always having one unresolved prediction open.

@@ -55,7 +55,7 @@ Follow `video-workflow/WORKFLOW.md` exactly. Read only the reference files a ste
 
 | Stage | What happens | Read |
 |---|---|---|
-| Script | Written in the user's style, delivered as numbered chunks `S01…` of one or two sentences | `writing-style.md`, `script-loop.md`, `captions.md` |
+| Script | Built with the content principles, in the user's style, delivered as numbered chunks `S01…` of one or two sentences | `writing-style.md`, `script-loop.md`, `captions.md` |
 | Footage scout | Search only, no downloads: what is really filmable for each named thing | `footage-and-sourcing.md` |
 | **Gate A** | User reads the chunks and the `visual:` plan, then records | |
 | Voice | Transcribe first, compare with the script, fix from what was said | `voice-chain.md` |
@@ -71,6 +71,7 @@ Follow `video-workflow/WORKFLOW.md` exactly. Read only the reference files a ste
 - **Footage shows the named thing; graphics explain concepts.** A wrong-event or wrong-year clip is a factual error, not a rights question.
 - **Rights are the user's call.** Never approve or declare rights for them; record their exact words.
 - **Never self-approve.** Builders build, checks and the user review.
+- **Writing follows the content principles** (`references/writing-style.md`): one viewer, the gap, line 1 sells line 2, loops, specificity, simple sentences, cut the fluff. They decide how the script is built; the user's style and the stance only add constraints. Apply silently, never print a checklist. If the `content-principles` skill is installed, load it first.
 - **Voice first.** The recorded voice is the truth: if it deviates from the script, fix captions from what was said (or flag a re-record), then build.
 - **One fix, then flag.** Read a failing command's error once, fix the cause once; if it fails again take the fallback or drop the item and name it in the hand-off. No retry loops. Never pipe a chain tool through grep/head/tail (it swallows errors).
 - **Nothing from memory.** No URL, number, name, clip range or file name that is not in the research file, the script, the shot list, the scout file or a tool's output.
