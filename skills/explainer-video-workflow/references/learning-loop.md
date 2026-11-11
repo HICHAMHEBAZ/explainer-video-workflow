@@ -12,3 +12,8 @@ Keep `style-preferences.md` short (a page). The per-pick history lives in `style
 
 ## Watching list
 A choice made once goes to a "Watching" section in `style-preferences.md`. If it repeats, promote it.
+
+## Voice and writing lessons
+- **Writing:** when the user corrects a word, phrase or habit in the script, add it the same turn to `## Writing` in `style-preferences.md` (preferred forms table, never-use list, rhythm). Repeated trap = a rule.
+- **Voice:** when the audit finds the same defect twice (a noisy room floor, a stumble at chunk starts, a threshold that never fires), record the fix (threshold, recording advice) in `voice-chain.md` terms in `style-preferences.md` under `## Voice`.
+- **Scout:** note nouns that returned NONE so the next run does not promise footage for them.

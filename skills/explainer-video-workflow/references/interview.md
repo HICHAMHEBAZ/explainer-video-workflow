@@ -1,83 +1,81 @@
-# Interview question bank
+# Intake question bank
 
-Use `AskUserQuestion`. Two rounds, up to 4 questions per round. Put the recommended option first. "Other" is added automatically. Skip anything already answered.
+Use `AskUserQuestion`. Round 1 is always the three creative questions (references, writing style, aspect ratio) before anything else; round 2 is production. At most 4 questions per round. Put the recommended option first ("Other" is added automatically). Skip anything already answered.
 
-## Round 1: creative inputs
+## Round 1: creative inputs (always first)
 
 ### Q1 References (header: "References")
-Question: "What should this video's look and feel be based on?"
+Question: "What should this video's look, sound and feel be based on?"
 | Option | Meaning | Sets |
 |---|---|---|
 | My own past videos or brand kit | The user has a style to match | `REF_MODE=own` |
 | Other creators' videos | Inspiration only, no reuse | `REF_MODE=inspiration` |
 | Screenshots or a mood board | Static references | `REF_MODE=stills` |
-| Nothing yet, propose a style | Claude proposes 2 directions at Gate A | `REF_MODE=none` |
-Follow-up in plain chat: "Paste the links or file paths, and in one line say what to copy (frame, captions, pacing, colours, b-roll style) and what not to copy."
-Output: fill `{{REFERENCES}}` and `{{COPY_NOT_COPY}}` in `style-preferences.md`. A reference is described in words (grid, caption position, pacing, palette). Never store another creator's footage or logo in the project.
+| Nothing yet, propose a style | Two directions proposed at Gate A | `REF_MODE=none` |
 
-### Q2 Content source (header: "Source")
+Follow-up in plain chat: "Paste the links or paths, and in one line say what to copy (frame, captions, pacing, colours, b-roll style, sound) and what not to copy."
+Output: `{{REFERENCES}}`, `{{COPY}}`, `{{DO_NOT_COPY}}`. A reference is described in words (grid, caption position, pacing, palette, cut rhythm). Never store another creator's footage or logo in the project.
+
+### Q2 How you write (header: "Writing")
+Question: "How should the script sound?"
 | Option | Sets |
 |---|---|
-| An article or URL | `SOURCE=url` (read it at the script step) |
-| Pasted text or notes | `SOURCE=text` |
-| A topic, research it for me | `SOURCE=research` (needs web tools; cite every claim) |
-| My own footage and a rough idea | `SOURCE=footage` (b-roll step becomes a footage review) |
+| I will paste sample scripts or captions, match them | `WRITE_MODE=sample`: extract the style from the samples (see `writing-style.md`) |
+| I will describe it | `WRITE_MODE=described`: ask the follow-ups below |
+| Match my references | `WRITE_MODE=refs`: derive from the reference videos' narration |
+| No style yet, propose one | `WRITE_MODE=propose`: write two short sample hooks at Gate A, user picks |
 
-### Q3 Script type (header: "Script type")
-| Option | Loop emphasis |
-|---|---|
-| Explainer (how or why something works) | Head fakes from the mechanism; MOTION-heavy middle |
-| News breakdown | Stakes from "what changes for you"; receipts (headlines, filings) as MEDIA |
-| Story or case study | One character; chronology; MEDIA-heavy with archive footage |
-| Myth-buster | Head fake is the structure: expected belief, then the reversal |
-Additional types (user can pick "Other"): tutorial, product or pitch, opinion. For these, set `LOOP=light` (stakes, one question, one reveal, a closing question) and warn that the retention loop is built for informational content.
-Output: `{{SCRIPT_TYPE}}`, `{{LOOP_EMPHASIS}}`.
+Plain-chat follow-ups (only the unanswered ones):
+1. The one viewer, in a sentence.
+2. Language, dialect or register, and spelling conventions.
+3. Sentence length and rhythm (short and punchy, or flowing).
+4. Person and tone (I / you / we; "a friend at a café", "newsroom", "teacher").
+5. Report-only, or opinion allowed.
+6. Words, phrases and openings to never use.
 
-### Q4 Language and voice (header: "Language")
-Ask the language or dialect in the question text (default: the language the user is writing in). Options for voice:
+Output: the `## Writing` section of `style-preferences.md`: `{{VIEWER}}`, `{{LANGUAGE}}`, `{{REGISTER}}`, `{{RHYTHM}}`, `{{TONE}}`, `{{STANCE}}`, `{{AVOID_WORDS}}`, `{{RTL}}` (true for Arabic, Hebrew, Persian, Urdu).
+
+### Q3 Aspect ratio and format (header: "Format")
 | Option | Sets |
 |---|---|
-| Captions only, no voiceover | `VO=none`, captions timed at ~2.4 words per second |
-| I will record a voiceover | `VO=user`, re-time captions to audio after the recording |
-| AI voiceover | `VO=tts`, ask which tool; re-time to the audio |
-| Not sure yet | `VO=none`, revisit at Gate B |
-Also ask (plain chat) for: dialect spelling conventions, words to avoid, and a tone phrase ("a friend at a café", "newsroom", "teacher"). Output: `{{LANGUAGE}}`, `{{VOICE_RULES}}`, `{{RTL}}` (true for Arabic, Hebrew, Persian, Urdu).
+| 9:16 vertical (Recommended) | 1080×1920; Reels, Shorts, TikTok |
+| 4:5 portrait | 1080×1350; Instagram feed |
+| 1:1 square | 1080×1080; feeds, LinkedIn |
+| 16:9 landscape | 1920×1080; YouTube, LinkedIn, web |
+
+Ask in chat: length (default 60 s; 30 s shorter; 90–180 s needs a bigger idea) and platforms.
+Output: `{{ASPECT}}`, `{{CANVAS}}`, `{{LENGTH}}`, `{{FPS}}` (default 30; 24 for a filmic look), `{{PLATFORMS}}`, `{{BEATS}}`, `{{WORDS}}` (about 2.4 spoken words per second), and the safe-zone row from `captions.md`. Export at the canvas size; a smaller export (720 p) is fine if the user wants it faster.
 
 ## Round 2: production inputs
 
-### Q5 Format (header: "Format")
+### Q4 Content source and script type (header: "Source")
+Source: an article or URL (`SOURCE=url`); pasted text or notes (`text`: keep its angle, research only what it leaves thin); a topic to research (`research`: cite every claim, keep a research file); own footage and a rough idea (`footage`).
+Script type: explainer, news breakdown, story or case study, myth-buster, tutorial, product or pitch, opinion. Sets `{{SCRIPT_TYPE}}`. For tutorial, pitch and opinion use `LOOP=light`.
+
+### Q5 Voice (header: "Voice")
 | Option | Sets |
 |---|---|
-| 9:16, 60 s (Recommended) | 1080×1920, 30 fps, 15 beats, 120–140 spoken words |
-| 9:16, 30 s | 8 beats, 60–70 words |
-| 9:16, 90–150 s | scale beats, add a brand sting after the hook |
-| 16:9 or 1:1 | change safe zones; warn that the layout rules in this skill assume 9:16 |
-Ask the platforms (Reels, Shorts, TikTok, LinkedIn) in chat; they decide the post-package files.
+| I record it myself | `VO=user`: chunks recorded twice, voice chain runs (`voice-chain.md`) |
+| AI voiceover | `VO=tts`: ask which tool; skip take picking, keep alignment and audit |
+| Supplied audio (a speaker's own words) | `VO=supplied`: silence removal only; captions follow the words |
+| Captions only | `VO=none`: captions at about 2.4 words per second; voice steps skipped |
+
+Output: `{{VO}}`, `{{VOICE_RULES}}`.
 
 ### Q6 Renderer (header: "Renderer")
-| Option | Effect on the workflow |
+| Option | Effect |
 |---|---|
-| HTML scenes + headless browser + ffmpeg | Full pipeline: scene pages, stills for checking, one render queue, assemble script |
-| Remotion | Scenes are React compositions; stills via `remotion still`; render queue via `remotion render` |
-| Manual editor (CapCut, Premiere, DaVinci, After Effects) | Build step produces a scene spec per beat (shot, motion, caption chunks, timing) for the editor; no render queue or lint |
-| Plan only | Stop after Gate A; deliver script, shot list, sourcing log, motion briefs |
-Output: `{{RENDERER}}`, and which of steps 4, 5, 6 apply (see `workflow-steps.md`).
+| HTML scenes + headless browser + ffmpeg | Full pipeline: scene pages, stills, lint, one render queue, assemble |
+| Remotion | Scenes are React compositions; stills via `remotion still`; `remotion render` |
+| Manual editor (CapCut, Premiere, DaVinci, After Effects) | Build step produces a scene spec per beat for the editor; no lint or render queue |
+| Plan only | Stop after Gate A: script, shot list, scout file, motion briefs |
 
-### Q7 b-roll policy (header: "b-roll")
-| Option | Rights rule |
-|---|---|
-| Own footage only | No sourcing; user supplies files |
-| Free licences (Wikimedia Commons, NASA, public-domain archives) | Log licence and author per asset; credit in the post |
-| Stock sites as well | Allowed only because the user chose it; log the licence |
-| Screenshots of public sources for commentary | Real page, real quote, source shown; never redrawn |
-Multi-select allowed. Output: `{{BROLL_POLICY}}`. Social and web video is never fetched unless the user states a rights declaration in chat.
+### Q7 b-roll policy and rights (header: "b-roll")
+Multi-select: own footage only · free licences (Wikimedia Commons, NASA, public domain) · stock sites · **YouTube or social clips** (allowed only when the user states a rights declaration in chat; record it verbatim; the footage must show the story it captions) · screenshots of public sources for commentary (real page, real quote, never redrawn).
+Output: `{{BROLL_POLICY}}`.
 
 ### Q8 Gates (header: "Gates")
-| Option | Sets |
-|---|---|
-| Normal: approve the plan, then the final cut (Recommended) | `MODE=normal` |
-| Auto: stop only at the final cut | `MODE=auto` |
-Also ask where approval happens: chat only, or a shared board (an artifact or doc). Default chat: number the beats, the user answers "approve" or a note per number.
+Normal (stop at the script, then the final cut; recommended) or auto (stop only at the cut). Also ask where approval happens: chat only (default; number the chunks, the user answers "approve" or a note per number) or a shared board.
 
-## After the interview
-Echo the answers back as a 6-line summary before writing files. If the user corrects anything, update the variables, then generate.
+## After the intake
+Echo the answers back as a six-line summary before writing files. If the user corrects anything, update the variables, then generate.

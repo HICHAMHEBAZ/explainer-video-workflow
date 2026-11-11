@@ -34,7 +34,7 @@ Decide per beat, in this order. The first matching rule wins. Write the rule num
 ## Transitions
 Hard cuts only, on the caption chunk change. No fades, wipes or push-ins on the frame. When the next chunk continues the same idea, keep the card and props and change only what the chunk adds. A new section = new field colour and the card rises in (0.4 s) on its first scene only. Inside a card, motion is draw-on, pop and slide.
 
-## Frame (9:16, 1080×1920)
+## Frame (written for 9:16, 1080×1920; scale to the chosen ratio with the table in captions.md)
 | Element | Spec |
 |---|---|
 | Field | One flat colour per section (cream, sea blue, chalk are good starting points) |
